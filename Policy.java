@@ -1,8 +1,7 @@
 class Policy
 {
    private double height,
-                  weight,
-                  BMI;
+                  weight;
    private int age;
    private String number, 
                   provider,
@@ -197,9 +196,10 @@ class Policy
       @return BMI the client's BMI
    */
    public double getBMI()
-   {
-      BMI = (weight * 703) / (height * height);
-      return BMI;
+   {  
+      final double CONSTANT = 703;
+      
+      return (weight * CONSTANT) / (height * height);
    }
    
    /**
@@ -208,24 +208,28 @@ class Policy
    */
    public double getFee()
    {  
-      //fee variable to store fees with base starting fee of $600 
-      double fee = 600.0;
+      final double BASE_PRICE = 600.0;
+      final double ADDITIONAL_AGE_FEE = 75.0;
+      final double ADDITIONAL_SMOKE_FEE = 100.0;
+      final double ADDITIONAL_FEE_PER_BMI = 20.0;
       
-      //determine additional $100 fee based on if client's age is over 50
-      if (age > 50)
-         fee += 100.0;
-      else
-         fee += 0.0;
+      final int AGE_LIMIT = 50;
+      final int BMI_LIMIT = 35;
+         
+      //fee variable to store fees with base starting fee of $600 
+      double fee = BASE_PRICE;
+      
+      //determine additional $75 fee based on if client's age is over 50
+      if (age > AGE_LIMIT)
+         fee += ADDITIONAL_AGE_FEE;
+
       //determine addition $100 fee based on client's smoking status
       if (smokeStatus.equals("smoker"))
-         fee += 100.0;
-      else
-         fee += 0.0;
+         fee += ADDITIONAL_SMOKE_FEE;
+
       //determine addition fee based on client's BMI
-      if (BMI > 35)
-         fee += ((BMI - 35) * 20);
-      else
-         fee += 0.0;
+      if (getBMI() > BMI_LIMIT)
+         fee += ((getBMI() - BMI_LIMIT) * ADDITIONAL_FEE_PER_BMI);
          
       return fee;
    }
