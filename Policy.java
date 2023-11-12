@@ -48,7 +48,7 @@ class Policy
    }
    
    /**
-      Accessor for client's height
+      Accessor for returning the client's height
       @return the client's height
    */
    public double getHeight()
@@ -57,7 +57,7 @@ class Policy
    }
    
    /**
-      Accessor for client's weight
+      Accessor for returning the client's weight
       @return the client's weight
    */
    public double getWeight()
@@ -66,7 +66,7 @@ class Policy
    }
    
    /**
-      Accessor for client's age
+      Accessor for returning the client's age
       @return the client's age
    */
    public int getAge()
@@ -75,7 +75,7 @@ class Policy
    }
    
    /**
-      Accessor for client's insurance number
+      Accessor for returning the client's insurance number
       @return the client's insurance number
    */
    public String getNumber()
@@ -84,7 +84,7 @@ class Policy
    }
    
    /**
-      Accessor for client's insurance provider
+      Accessor for returning the client's insurance provider
       @return the client's insurance provider
    */
    public String getProvider()
@@ -93,7 +93,7 @@ class Policy
    }
    
    /**
-      Accessor for client's first name
+      Accessor for returning the client's first name
       @return the client's first name
    */
    public String getFirstName()
@@ -102,7 +102,7 @@ class Policy
    }
    
    /**
-      Accessor for client's last name
+      Accessor for returning the client's last name
       @return the client's last name
    */
    public String getLastName()
@@ -111,7 +111,7 @@ class Policy
    }
    
    /**
-      Accessor for client's smoking status
+      Accessor for returning the client's smoking status
       @return the client's smoking status
    */
    public String getSmokeStatus()
@@ -120,7 +120,7 @@ class Policy
    }
    
    /**
-      Mutator for client's height
+      Mutator for setting the client's height
       @param heightNum the client's height
    */
    public void setHeight(double heightNum)
@@ -129,7 +129,7 @@ class Policy
    }
    
    /**
-      Mutator for client's weight
+      Mutator for setting the client's weight
       @param weightNum the client's weight
    */
    public void setWeight(double weightNum)
@@ -138,7 +138,7 @@ class Policy
    }
    
    /**
-      Mutator for client's age
+      Mutator for setting the client's age
       @param ageInt the client's age
    */
    public void setAge(int ageInt)
@@ -147,7 +147,7 @@ class Policy
    }
    
    /**
-      Mutator for client's insurance number
+      Mutator for setting the client's insurance number
       @param numberStr the client's insurance number
    */
    public void setNumber(String numberStr)
@@ -156,7 +156,7 @@ class Policy
    }
    
    /**
-      Mutator for client's insurance provider
+      Mutator for setting the client's insurance provider
       @param providerStr the client's insurance provider
    */
    public void setProvider(String providerStr)
@@ -165,7 +165,7 @@ class Policy
    }
    
    /**
-      Mutator for client's first name
+      Mutator for setting the client's first name
       @param firstNameStr the client's first name
    */
    public void setFirstName(String firstNameStr)
@@ -174,7 +174,7 @@ class Policy
    }
    
    /**
-      Mutator for client's last name
+      Mutator for setting the client's last name
       @param lastNameStr the client's last name
    */
    public void setLastName(String lastNameStr)
@@ -183,7 +183,7 @@ class Policy
    }
    
    /**
-      Mutator for client's smoking status
+      Mutator for setting the client's smoking status
       @param smokeStatusStr the client's smoking status
    */
    public void setSmokeStatus(String smokeStatusStr)
@@ -192,7 +192,7 @@ class Policy
    }
    
    /**
-      Calculate the client's Body Mass Index
+      Calculate and return the client's Body Mass Index
       @return BMI the client's BMI
    */
    public double getBMI()
@@ -203,7 +203,7 @@ class Policy
    }
    
    /**
-      Calculate the fees
+      Calculate and return the fees
       @return fee the client's insurance fees
    */
    public double getFee()
