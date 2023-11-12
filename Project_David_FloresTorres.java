@@ -53,17 +53,32 @@ class Project_David_FloresTorres
          //Add Policy instances to ArrayList
          list.add(client);
       }
-
-         System.out.print("\nPolicy Number: " + client.getNumber());
-         System.out.print("\nProvider Name: " + client.getProvider());
-         System.out.print("\nPolicyholder's First Name: " + client.getFirstName());
-         System.out.print("\nPolicyholder's Last Name: " + client.getLastName());
-         System.out.print("\nPolicyholder's Age: " + client.getAge());
-         System.out.print("\nPolicyholder's Smoking Status: " + client.getSmokeStatus());
-         System.out.printf("\nPolicyholder's Height: %,.1f inches", client.getHeight());
-         System.out.printf("\nPolicyholder's Weight: %,.1f pounds", client.getWeight());
-         System.out.printf("\nPolicyholder's BMI: %,.2f", client.getBMI());
-         System.out.printf("\nPolicy Price: $%,.2f\n\n", client.getFee());
+      
+      //Output all the information from array
+      for (Policy customer : list)
+      {
+         System.out.print("\nPolicy Number: " + customer.getNumber());
+         System.out.print("\nProvider Name: " + customer.getProvider());
+         System.out.print("\nPolicyholder's First Name: " + customer.getFirstName());
+         System.out.print("\nPolicyholder's Last Name: " + customer.getLastName());
+         System.out.print("\nPolicyholder's Age: " + customer.getAge());
+         System.out.print("\nPolicyholder's Smoking Status: " + customer.getSmokeStatus());
+         System.out.printf("\nPolicyholder's Height: %,.1f inches", customer.getHeight());
+         System.out.printf("\nPolicyholder's Weight: %,.1f pounds", customer.getWeight());
+         System.out.printf("\nPolicyholder's BMI: %,.2f", customer.getBMI());
+         System.out.printf("\nPolicy Price: $%,.2f\n\n", customer.getFee());
+         
+         //Increment totalSmokers every time loop encounters smoker
+         if (customer.getSmokeStatus().equals("smoker"))
+            totalSmokers++;
+      }
+      
+      //Calculate nonsmokers
+      totalNonsmokers = list.size() - totalSmokers;
+      
+      //Display smoker information
+      System.out.print("\nThe number of policies with a smoker is: " + totalSmokers);
+      System.out.print("\nThe number of policies with a non-smoker is: " + totalNonsmokers);
 
    }
 }
