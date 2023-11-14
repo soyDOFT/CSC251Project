@@ -1,23 +1,20 @@
 import java.util.*;
 import java.io.*;
 
-class Project_David_FloresTorres
+public class Project_David_FloresTorres
 {
    public static void main(String[] args) throws IOException
    {
       double height = 0.0,
              weight = 0.0;
       int age = 0,
-          totalSmokers = 0,
-          totalNonsmokers = 0;
+          totalSmokers = 0;
       String number = "", 
              provider = "",
              firstName = "",
              lastName = "",
              smokeStatus = "";
              
-      //Create a Policy object to store client information
-      Policy client;
       //Create an ArrayList to store clients
       ArrayList<Policy> list = new ArrayList<>();
       //Open the PolicyInformation.txt file
@@ -43,13 +40,12 @@ class Project_David_FloresTorres
          
          //skip empty lines if there is more input
          if (input.hasNext())
-         {
             input.nextLine();
+         if (input.hasNext())
             input.nextLine();
-         }
          
          //Store input information into Policy object
-         client = new Policy(height, weight, age, number, provider, firstName, lastName, smokeStatus);
+         Policy client = new Policy(height, weight, age, number, provider, firstName, lastName, smokeStatus);
          //Add Policy instances to ArrayList
          list.add(client);
       }
@@ -73,12 +69,12 @@ class Project_David_FloresTorres
             totalSmokers++;
       }
       
-      //Calculate nonsmokers
-      totalNonsmokers = list.size() - totalSmokers;
+      //close the file
+      input.close();
       
       //Display smoker information
       System.out.print("\nThe number of policies with a smoker is: " + totalSmokers);
-      System.out.print("\nThe number of policies with a non-smoker is: " + totalNonsmokers);
+      System.out.print("\nThe number of policies with a non-smoker is: " + (list.size() - totalSmokers));
 
    }
 }
