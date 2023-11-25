@@ -58,4 +58,15 @@ public class Policy
    {
       provider = providerStr;
    }
+   
+   /**
+      toString method for returning the status of the object
+      @return str The status of the object in String form
+   */
+   public String toString()
+   {
+      String str = "Insurance Provider: " + provider + "\nInsurance Number: " + number;
+      
+      return str;
+   }
 }
