@@ -191,4 +191,15 @@ public class PolicyHolder
          
       return fee;
    }
+   
+   /**
+      toString method to represent object in String form
+      @return str Stores and returns the object's status in String form
+   */
+      public String toString()
+   {
+      String str = "Height: " + height + "\nWeight: " + weight + "\nAge: " + age + "\nFirst Name: " + firstName + "\nLast Name: " + lastName + "\nSmoke Status: " + smokeStatus;
+      
+      return str;
+   }
 }
