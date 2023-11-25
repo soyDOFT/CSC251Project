@@ -1,5 +1,6 @@
 public class Policy
-{
+{  
+   private static int size = 0;
    private String number,
                   provider;
 
@@ -10,6 +11,8 @@ public class Policy
    {
       number = "";
       provider = "";
+      
+      size++;
    }
    
    /**
@@ -21,6 +24,8 @@ public class Policy
    {
       number = numberStr;
       provider = providerStr;
+      
+      size++;
    }
    
    /**
@@ -68,5 +73,14 @@ public class Policy
       String str = "Insurance Provider: " + provider + "\nInsurance Number: " + number;
       
       return str;
+   }
+   
+   /**
+      accessor method to return the amount of object made;
+      @return size the amount of object made
+   */
+   public int getSize()
+   {
+      return size;
    }
 }
