@@ -3,6 +3,7 @@ public class Policy
    private static int size = 0;
    private String number,
                   provider;
+   private PolicyHolder holder;
 
    /**
       No-arg Constructor
@@ -11,6 +12,7 @@ public class Policy
    {
       number = "";
       provider = "";
+      holder = new PolicyHolder();
       
       size++;
    }
@@ -20,10 +22,11 @@ public class Policy
       @param numberStr the client's insurance number
       @param providerStr the client's provider
    */
-   public Policy(String numberStr, String providerStr)
+   public Policy(String numberStr, String providerStr, double height, double weight, int age, String firstName, String lastName, String smokeStatus)
    {
       number = numberStr;
       provider = providerStr;
+      holder = new PolicyHolder(height, weight, age, firstName, lastName, smokeStatus);
       
       size++;
    }
@@ -70,16 +73,43 @@ public class Policy
    */
    public String toString()
    {
-      String str = "Insurance Provider: " + provider + "\nInsurance Number: " + number;
+      String str = "Policy Number: " + number + "\nProvider Name: " + provider + "\n" + holder;
       
       return str;
+   }
+   
+   /**
+      Calculate and return the client's Body Mass Index
+      @return holder.getBMI() the client's BMI
+   */
+   public double getBMI()
+   {        
+      return holder.getBMI();
+   }
+   
+   /**
+      return the fees
+      @return holder.getFee() the client's insurance fees
+   */
+   public double getFee()
+   {  
+      return holder.getFee();
+   }
+   
+   /**
+      return the fees
+      @return holder.getFee() the client's insurance fees
+   */
+   public String getSmokeStatus()
+   {  
+      return holder.getSmokeStatus();
    }
    
    /**
       accessor method to return the amount of object made;
       @return size the amount of object made
    */
-   public int getSize()
+   public static int getSize()
    {
       return size;
    }

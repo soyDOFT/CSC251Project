@@ -26,26 +26,38 @@ public class Project_David_FloresTorres
       while (input.hasNext())
       {
          number = input.nextLine();
-         provider = input.nextLine();;
-         firstName = input.nextLine();
-         lastName = input.nextLine();
-         age = input.nextInt();
+         System.out.println(number);
          
+         provider = input.nextLine();;
+         System.out.println(provider);
+         
+         firstName = input.nextLine();
+         System.out.println(firstName);
+         
+         lastName = input.nextLine();
+         System.out.println(lastName);
+         
+         age = input.nextInt();
          //clear buffer
          input.nextLine();
+         System.out.println(age);
          
          smokeStatus = input.nextLine();
+         System.out.println(smokeStatus);
+         
          height = input.nextDouble();
+         System.out.println(height);
+         
          weight = input.nextDouble();
+         System.out.println(weight);
          
          //skip empty lines if there is more input
+         input.nextLine();
          if (input.hasNext())
-            input.nextLine();
-         if (input.hasNext())
-            input.nextLine();
+         input.nextLine();
          
          //Store input information into Policy object
-         Policy client = new Policy(height, weight, age, number, provider, firstName, lastName, smokeStatus);
+         Policy client = new Policy(number, provider, height, weight, age, firstName, lastName, smokeStatus);
          //Add Policy instances to ArrayList
          list.add(client);
       }
@@ -53,14 +65,7 @@ public class Project_David_FloresTorres
       //Output all the information from array
       for (Policy customer : list)
       {
-         System.out.print("\nPolicy Number: " + customer.getNumber());
-         System.out.print("\nProvider Name: " + customer.getProvider());
-         System.out.print("\nPolicyholder's First Name: " + customer.getFirstName());
-         System.out.print("\nPolicyholder's Last Name: " + customer.getLastName());
-         System.out.print("\nPolicyholder's Age: " + customer.getAge());
-         System.out.print("\nPolicyholder's Smoking Status: " + customer.getSmokeStatus());
-         System.out.printf("\nPolicyholder's Height: %,.1f inches", customer.getHeight());
-         System.out.printf("\nPolicyholder's Weight: %,.1f pounds", customer.getWeight());
+         System.out.print(customer);
          System.out.printf("\nPolicyholder's BMI: %,.2f", customer.getBMI());
          System.out.printf("\nPolicy Price: $%,.2f\n\n", customer.getFee());
          
@@ -73,8 +78,8 @@ public class Project_David_FloresTorres
       input.close();
       
       //Display smoker information
+      System.out.print("\nThe number of policies is: " + Policy.getSize());
       System.out.print("\nThe number of policies with a smoker is: " + totalSmokers);
       System.out.print("\nThe number of policies with a non-smoker is: " + (list.size() - totalSmokers));
-
    }
 }
